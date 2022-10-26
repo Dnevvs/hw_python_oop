@@ -1,4 +1,5 @@
-from abc import ABCMeta, abstractmethod
+from abc import abstractmethod
+# ABCMeta, abstractmethod
 from dataclasses import dataclass, asdict
 
 
@@ -22,7 +23,7 @@ class InfoMessage:
 
 
 class Training:
-    __metaclass__ = ABCMeta
+    # __metaclass__ = ABCMeta
     MIN_IN_H: float = 60
     M_IN_KM: float = 1000
     LEN_STEP: float = 0.65
