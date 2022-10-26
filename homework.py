@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from dataclasses import dataclass, asdict
+from typing import List
 
 
 @dataclass
@@ -143,7 +144,7 @@ class Swimming(Training):
         return result
 
 
-def read_package(workout_type: str, data: list[int]) -> Training:
+def read_package(workout_type: str, data: List[int]) -> Training:
     """Прочитать данные полученные от датчиков."""
     action_classes = {'SWM': Swimming,
                       'RUN': Running,
