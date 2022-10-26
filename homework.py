@@ -1,5 +1,4 @@
 from abc import abstractmethod
-# ABCMeta, abstractmethod
 from dataclasses import dataclass, asdict
 
 
@@ -23,7 +22,6 @@ class InfoMessage:
 
 
 class Training:
-    # __metaclass__ = ABCMeta
     MIN_IN_H: float = 60
     M_IN_KM: float = 1000
     LEN_STEP: float = 0.65
@@ -152,9 +150,9 @@ def read_package(workout_type: str, data: list[int]) -> Training:
                       'WLK': SportsWalking}
     if workout_type in action_classes:
         action_class: Training = action_classes[workout_type](*data)
+        return action_class
     else:
         raise ValueError(f'Некорректный тип тренировки {workout_type} !')
-    return action_class
 
 
 def main(training: Training) -> None:
