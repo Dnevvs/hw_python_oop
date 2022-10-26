@@ -10,15 +10,14 @@ class InfoMessage:
     distance: float
     speed: float
     calories: float
-    imessage = ('Тип тренировки: {}; '
-                'Длительность: {:.3f} ч.; '
-                'Дистанция: {:.3f} км; '
-                'Ср. скорость: {:.3f} км/ч; '
-                'Потрачено ккал: {:.3f}.')
+    imessage = ('Тип тренировки: {training_type};'
+                ' Длительность: {duration:.3f} ч.;'
+                ' Дистанция: {distance:.3f} км;'
+                ' Ср. скорость: {speed:.3f} км/ч;'
+                ' Потрачено ккал: {calories:.3f}.')
 
     def get_message(self) -> str:
-        result = self.imessage.format(*asdict(self).values())
-        # result = self.imessage.format(**asdict(self))
+        result = self.imessage.format(**asdict(self))
         return result
 
 
